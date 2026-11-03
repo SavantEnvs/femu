@@ -1,0 +1,9 @@
+project: savantenvs/femu
+target: fuzz_onfi
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_onfi/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_onfi
+    libfuzzer: true
+    timeout: 5

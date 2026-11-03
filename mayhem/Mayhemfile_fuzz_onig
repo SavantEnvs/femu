@@ -1,0 +1,10 @@
+project: savantenvs/femu
+target: fuzz_onig
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_onig/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_onig
+    libfuzzer: true
+    dictionary: /mayhem/roms/edk2/MdeModulePkg/Universal/RegularExpressionDxe/oniguruma/harnesses/ascii_compatible.dict
+    timeout: 5
